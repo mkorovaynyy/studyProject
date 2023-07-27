@@ -9,7 +9,8 @@ public class Main {
         Author vasilijVasiliev = new Author("Василий", "Васильев");
         Book azbuka = new Book("Азбука", 1986, ivanIvanov);
         Book matematika = new Book("Математика", 2002, vasilijVasiliev);
-        matematika.setDateOfPublication(2005);
+        matematika.setDateOfPublication(2006);
+        System.out.println(azbuka.getAuthor().getName());
 
     }
 }
