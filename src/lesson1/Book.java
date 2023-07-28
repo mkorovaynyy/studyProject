@@ -1,5 +1,7 @@
 package lesson1;
 
+import java.util.Objects;
+
 public class Book {
     private String title;
     private int dateOfPublication;
@@ -25,5 +27,27 @@ public class Book {
 
     public void setDateOfPublication(int dateOfPublication) {
         this.dateOfPublication = dateOfPublication;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", dateOfPublication=" + dateOfPublication +
+                ", author=" + author +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Book)) return false;
+        Book book = (Book) o;
+        return getDateOfPublication() == book.getDateOfPublication() && Objects.equals(getTitle(), book.getTitle()) && Objects.equals(getAuthor(), book.getAuthor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTitle(), getDateOfPublication(), getAuthor());
     }
 }
